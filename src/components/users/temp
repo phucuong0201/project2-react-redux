@@ -1,0 +1,135 @@
+    this.state = {
+      user: {
+        username: "",
+        firstname: "",
+        lastname: "",
+        email: "",
+        password: "",
+        phonenumber: "",
+        group_id: "",
+        lock: "",
+        status: ""
+      }
+    };
+
+     this.onUserNameChange = this.onUserNameChange.bind(this);
+      this.onFirstNameChange = this.onFirstNameChange.bind(this);
+      this.onLastNameChange = this.onLastNameChange.bind(this);
+      this.onEmailChange = this.onEmailChange.bind(this);
+      this.onPasswordChange = this.onPasswordChange.bind(this);
+      this.onPhoneNumberChange = this.onPhoneNumberChange.bind(this);
+      this.onGroupIdChange = this.onGroupIdChange.bind(this);
+      this.onLockChange = this.onLockChange.bind(this);
+      this.onStatusChange = this.onStatusChange.bind(this);
+      this.onClickSave = this.onClickSave.bind(this);
+
+
+  onUserNameChange(event) {
+    const user = this.state.user;
+    user.username = event.target.value;
+    this.setState({user: user});
+  }
+
+  onFirstNameChange(event) {
+    const user = this.state.user;
+    user.firstname = event.target.value;
+    this.setState({user: user});
+  }
+
+  onLastNameChange(event) {
+    const user = this.state.user;
+    user.lastname = event.target.value;
+    this.setState({user: user});
+  }
+
+  onEmailChange(event) {
+    const user = this.state.user;
+    user.email = event.target.value;
+    this.setState({user: user});
+  }
+
+  onPasswordChange(event) {
+    const user = this.state.user;
+    user.password = event.target.value;
+    this.setState({user: user});
+  }
+
+  onPhoneNumberChange(event) {
+    const user = this.state.user;
+    user.phonenumber = event.target.value;
+    this.setState({user: user});
+  }
+
+  onGroupIdChange(event) {
+    const user = this.state.user;
+    user.group_id = event.target.value;
+    this.setState({user: user});
+  }
+  onLockChange(event) {
+    const user = this.state.user;
+    user.lock = event.target.value;
+    this.setState({user: user});
+  }
+
+  onStatusChange(event) {
+    const user = this.state.user;
+    user.status = event.target.value;
+    this.setState({user: user});
+  }
+
+  onClickSave() {
+    this.props.actions.createUser(this.state.user);
+  }
+
+
+
+
+<h2>Add User</h2>
+        <input type="text"
+               placeholder="username"
+               onChange={this.onUserNameChange}
+               value={this.state.user.username}/>
+
+        <input type="text"
+               placeholder="firstname"
+               onChange={this.onFirstNameChange}
+               value={this.state.user.firstname}/>
+
+        <input type="text"
+               placeholder="lastname"
+               onChange={this.onLastNameChange}
+               value={this.state.user.lastname}/>
+
+        <input type="text"
+               placeholder="email"
+               onChange={this.onEmailChange}
+               value={this.state.user.email}/>
+
+        <input type="text"
+               placeholder="password"
+               onChange={this.onPasswordChange}
+               value={this.state.user.password}/>
+
+        <input type="text"
+               placeholder="phonenumber"
+               onChange={this.onPhoneNumberChange}
+               value={this.state.user.phonenumber}/>
+
+        <input type="number"
+               placeholder="group_id"
+               onChange={this.onGroupIdChange}
+               value={this.state.user.group_id}/>
+
+        <input type="number"
+               placeholder="lock"
+               onChange={this.onLockChange}
+               value={this.state.user.lock} />
+
+        <input type="text"
+               placeholder="status"
+               onChange={this.onStatusChange}
+               value={this.state.user.status}/>
+
+        <input type="submit"
+               value="Save"
+               onClick={this.onClickSave}/>
