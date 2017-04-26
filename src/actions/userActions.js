@@ -2,9 +2,9 @@ import * as types from './actionTypes';
 import axios from 'axios';
 
 const root_url = 'https://project-2-ltu-06.herokuapp.com/';
-const config = {
-  headers: {'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0OTMwNjk5ODEsInN1YiI6ODIsImlzcyI6Imh0dHA6XC9cL3Byb2plY3QtMi1sdHUtMDYuaGVyb2t1YXBwLmNvbVwvYXV0aCIsImlhdCI6MTQ5MzA0MTU4MSwibmJmIjoxNDkzMDQxNTgxLCJqdGkiOiI1NmIyOGYyM2ExN2I2ZWQ2YTZjM2RlZGM4NzY2OTQzMyJ9.BRPDbiutjebUDV2bx-cVptHA3z9bOJD6uLG_xf89bB8'}
-};
+// const config = {
+//   headers: {'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0OTMwNjk5ODEsInN1YiI6ODIsImlzcyI6Imh0dHA6XC9cL3Byb2plY3QtMi1sdHUtMDYuaGVyb2t1YXBwLmNvbVwvYXV0aCIsImlhdCI6MTQ5MzA0MTU4MSwibmJmIjoxNDkzMDQxNTgxLCJqdGkiOiI1NmIyOGYyM2ExN2I2ZWQ2YTZjM2RlZGM4NzY2OTQzMyJ9.BRPDbiutjebUDV2bx-cVptHA3z9bOJD6uLG_xf89bB8'}
+// };
 
 export function loadUsersSuccess (users) {
   return {
@@ -29,7 +29,7 @@ export function updateUserSuccess(user) {
 
 export function loadUsers() {
   return function(dispatch) {
-    return axios.get(root_url + 'users', config)
+    return axios.get(root_url + 'users')
       .then(response => {
         dispatch(loadUsersSuccess(response.data));
       })
