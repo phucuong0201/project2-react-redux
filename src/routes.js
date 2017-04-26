@@ -12,14 +12,25 @@ import CVPage from './components/cv/CVPage';
 
 export default  (
   <Route path="/" component={App}>
-    <IndexRoute component={HomePage}/>
+      <IndexRoute component={HomePage}>
+        onEnter={requireAuth}>
+          <Route path="/about" component={AboutPage}/>
+          <Route path="/topics" component={TopicsPage}/>
+          <Route path="/users" component={UsersPage}/>
+          <Route path="/cvs" component={CVPage}/>
+          <Route path="/user" component={ManageUserPage}/>
+          <Route path="/user/:id" component={ManageUserPage}/>
+      </IndexRoute>
     <Route path="/login" component={LogInPage}/>
-    <Route path="/about" component={AboutPage}/>
-    <Route path="/topics" component={TopicsPage}/>
-    <Route path="/users" component={UsersPage}/>
-    <Route path="/cvs" component={CVPage}/>
-    <Route path="/user" component={ManageUserPage}/>
-    <Route path="/user/:id" component={ManageUserPage}/>
     <Route path="*" component={NotFound}/>
   </Route>
 );
+
+function requireAuth(nextState, replace) {
+  if (!sessionStorage.jwt) {
+    replace({
+      pathname: '/login',
+      state: { nextPathname: nextState.location.pathname }
+    })
+  }
+}
