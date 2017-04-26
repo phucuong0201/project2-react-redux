@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './App';
 import HomePage from './components/home/HomePage';
+import LogInPage from './components/login/LogInPage';
 import AboutPage from './components/about/AboutPage';
 import TopicsPage from './components/topics/TopicsPage';
 import UsersPage from './components/users/UsersPage';
@@ -12,6 +13,7 @@ import CVPage from './components/cv/CVPage';
 export default  (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage}/>
+    <Route path="/login" component={LogInPage}/>
     <Route path="/about" component={AboutPage}/>
     <Route path="/topics" component={TopicsPage}/>
     <Route path="/users" component={UsersPage}/>

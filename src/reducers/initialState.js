@@ -2,5 +2,6 @@ export default {
   users: [],
   groups: [],
   topics: [],
-  cvs: []
+  cvs: [],
+  session: !!sessionStorage.jwt
 }

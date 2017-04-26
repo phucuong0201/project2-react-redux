@@ -15,6 +15,7 @@ store.dispatch(loadTopics());
 store.dispatch(loadCvs());
 store.dispatch(loadGroups());
 
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory} routes={routes}/>
