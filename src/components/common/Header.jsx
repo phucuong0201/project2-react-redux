@@ -42,6 +42,7 @@ class Header extends React.Component {
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/users">Users</Link></li>
               <li><Link to="/cvs">CV List</Link></li>
+              <li><Link to="/teachers">Teacher</Link></li>
               <li><a href="/logout" onClick={this.logOut}>Logout</a></li>
             </ul>
             <form className="navbar-form navbar-right" action="#" role="search">
